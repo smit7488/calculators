@@ -1,0 +1,239 @@
+<style>
+  input[type=text] {
+  border-radius: 40px;
+  padding: 8px;
+  border: 1px; 
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  }
+  input:focus {
+  outline: none;
+  border: 1px solid #4188c8;
+  }
+  .form {
+  padding: 15px 30px; 
+  margin: 20px auto; 
+  font-family: "Lato", sans-serif;
+  font-style: regular;
+  color: #5b6670;
+  display: block;
+  }
+  label {
+  float: left; 
+  font-size: 16px;
+  font-weight: 400;
+  }
+  button {
+  padding: 10px 30px;
+  border-radius: 100px;
+  background-image: linear-gradient(70deg,#4475b9,#2ac4f3);
+  font-family: Lato,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  border: 0;
+  position: relative;
+  z-index: 10;
+  width: 180px;
+  }
+  button:focus {
+  outline: none;
+  }
+  .yoyoyo {
+  margin:10px; 
+  margin-top:-80px; 
+  max-width: 300px;
+  max-height: 300px;
+  padding: 10px;
+  }
+  .output{
+  color: #5b6670;
+  font-size: 16px;
+  line-height: 1.2;
+  }
+  .output2{
+  color: #5b6670;
+  font-size: 16px;
+  line-height: 1.2;
+  }
+  .output5{
+  color: #5b6670;
+  font-size: 16px;
+  line-height: 1.6;
+  }
+  .output3{
+  color: #2AC4F3;
+  font-size: 16px;
+  font-weight: Bold;
+  line-height: 1.2;
+  }
+  .output4{
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  color: #5b6670;
+  font-size: 16px;
+  }
+  #resetForm{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  }
+  .inputs-yo {
+  padding: 2px;
+  }
+  .outputswrapper {
+  display: flex;
+  margin-bottom: 0rem;
+  flex-direction: column;
+  }
+  .inneroutputs {
+  padding-left: 2rem;
+  }
+  .outeroutputs {
+  margin-right: 1rem;
+  padding-top: 8px;
+  border-radius: 6px;
+  }
+  .question-mark {
+  width: 100%; /* or any custom size */
+  height: 100%; 
+  object-fit: contain;
+  margin-left: 4px;
+  vertical-align: center;
+  }
+  .tooltip {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  }
+  .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 240px;
+  background-color: #232F51;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 1px 1px 3px 0 rgb(0 0 0 / 6%), 0 0 20px 0 rgb(0 0 0 / 9%);
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  }
+  .tooltip:hover .tooltiptext {
+  visibility: visible;
+  }
+  .graph-output {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  margin-bottom: -1rem;
+  margin-top: 2rem;
+  }
+  @media only screen and (max-width: 1000px) {
+  #resetForm{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  }
+  }
+  @media only screen and (max-width: 767px) {
+  .image-179 {
+  position: absolute !important;
+  padding: 0 30px 30px 0 !important;
+  width: 175px !important;
+  }
+  .outputswrapper {
+  flex-direction: column;
+  }
+  button {
+  width: -webkit-fill-available;
+  margin-top: -1rem;
+  }
+  .graph-output{
+  flex-direction: column;
+  }
+  .outeroutputs {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 6%), inset 0 0 20px 0 rgb(0 0 0 / 9%);
+  }
+  .yoyoyo {
+  margin-top: 0px;
+  align-self: center;
+  }
+  }
+</style>
+<html lang="en-us">
+  <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+     <meta name="author" content="Trevor Smith">
+     <title>Medicare Advantage Calculator</title>
+     <link href="main.css" rel="stylesheet" type="text/css" media="screen">
+     <script type='text/javascript' src='jsver1.js'></script>
+  </head>
+  <body>
+     <div class="form">
+        <form id="resetForm2">
+           <div class= "inputs-yo">
+              <label style ="color: #4475b9; font-weight: 700">New to Medicare Avg Commission</label> <input type="text" id="newToMedicareCommission" value="$543" required><br/><br/>
+           </div>
+           <div class= "inputs-yo">
+              <label style ="color: #4475b9; font-weight: 700">Replacement Avg Commission</label> <input type="text" id="replacementCommission"  value="$285" required><br/><br/><br/> 
+           </div>
+           <div class= "inputs-yo"> 
+              <label style ="color: #4475b9; font-weight: 700">New to Medicare Avg Override</label><input type="text" id="newToMedicareOverride" value="$100" required><br/><br/>
+           </div>
+           <div class= "inputs-yo">
+              <label style ="color: #4475b9; font-weight: 700">Replacement Avg Override</label><input type="text" id="replacementOverride" value="$50" required><br/><br/>
+           </div>
+           <div class= "inputs-yo">
+            <label style ="color: #4475b9; font-weight: 700">New to Medicare Apps Per Month</label><input type="text" id="newToMedicareAppsPerMonth" value="60" required><br/><br/>
+         </div>
+
+         <div class= "inputs-yo">
+            <label style ="color: #4475b9; font-weight: 700">Replacement Apps Per Month</label><input type="text" id="replacementAppsPerMonth" value="40" required><br/><br/>
+         </div>
+
+
+
+
+
+           <div class= "inputs-yo">
+              <label style ="color: #4475b9; font-weight: 700">Avg Persistency (%)</label>
+              <div class="tooltip"><img class="question-mark" src="https://cvcontent.blob.core.windows.net/cv-documents/webflow-stuff/question3.svg">   <span class="tooltiptext">Average Persistency is the percentage of policyholders who continue to pay their renewal premium.</span></div>
+              <input type="text" id="avgPersistency" value="90%" required><br/><br/>
+           </div>
+           <div class= "inputs-yo">
+              <label style ="color: #4475b9; font-weight: 700">Avg Annual Growth (%)</label> <input type="text" id="avgGrowth" value="20%" required> <br/><br/><br/>
+           </div>
+        </form>
+        <div class="outputswrapper">
+           <div class = "button-wrapper-boss">
+              <button type="button" onclick="medAdv()">Calculate</button> 
+              <br/><br/>
+           </div>
+           <div class="graph-output">
+              <div class="outeroutputs">
+                 <div class="output5" id="outputDiv26"></div>
+                 <div class="output5" id="outputDiv27"></div>
+                 <div class="output5" id="outputDiv28"></div>
+              </div>
+              <div class= "yoyoyo">
+                 <canvas id="myChart" width="400" height="400"></canvas>
+              </div>
+           </div>
+        </div>
+     </div>
+  </body>
+</html>
